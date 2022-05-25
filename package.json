@@ -1,0 +1,47 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docker-build": "docker buildx build --no-cache --platform linux/arm64 -t crypto-call-backend .",
+    "dev": "nodemon",
+    "build": "rimraf ./build && babel src --out-dir build --extensions \".ts,.tsx,.js\" --source-maps inline",
+    "start": "node build/index.js",
+    "check-types": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.16.3",
+    "@types/cors": "^2.8.12",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.13.2",
+    "web3": "^1.7.3",
+    "web3-eth-contract": "^1.7.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.17.10",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/body-parser": "^1.19.1",
+    "@types/express": "^4.17.12",
+    "@types/lodash": "^4.14.170",
+    "@types/node": "^15.12.2",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.3.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.2"
+  }
+}
